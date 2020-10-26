@@ -9,6 +9,7 @@
   let result;
   let bottomLine;
   let error;
+  let firstDueDate;
 
   let calculationData = {
     loanTerm: 0,
@@ -24,11 +25,18 @@
     paymentsPerYear: 0,
   };
 
+  const setupDueDate = () => {
+    firstDueDate = new Date();
+    firstDueDate.setMonth(firstDueDate.getMonth() + 1);
+  };
+
   onMount(async () => {
     const res = await fetch('loan-types.json');
     calc = (await res.json()).find((type) => type.id == loanType);
     calculationData.interest = calc.interest;
     calculationData.paymentsPerYear = calc.paymentsPerYear;
+
+    setupDueDate();
   });
 
   const validateInput = () => {
@@ -106,14 +114,14 @@
       <h2>Schedule</h2>
       <table class="result">
         <tr>
-          <th>Month:</th>
+          <th>Due Date:</th>
           <th>Interest:</th>
           <th>Principal:</th>
           <th>Balance:</th>
         </tr>
         {#each result as row, i}
           <tr>
-            <td>{utilities.monthNumberToDate(i, new Date())}</td>
+            <td>{utilities.monthNumberToDate(i, firstDueDate)}</td>
             <td>
               ${row.interest.toLocaleString(undefined, {
                 minimumFractionDigits: 2,
