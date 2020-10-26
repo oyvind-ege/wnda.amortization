@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Housing Loan",
+    "interest": 3.5,
+    "paymentsPerYear": 12
+  },
+  {
+    "id": 2,
+    "name": "Personal Loan",
+    "interest": 6.5,
+    "paymentsPerYear": 12
+  }
+]

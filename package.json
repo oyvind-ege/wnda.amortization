@@ -1,0 +1,20 @@
+{
+  "name": "wnda-amortization",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest --silent=false"
+  },
+  "author": "Øyvind Ege",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "babel-jest": "^26.6.1",
+    "jest": "^26.6.1"
+  }
+}
