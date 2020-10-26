@@ -26,9 +26,11 @@ jobs:
           npm i
       - name: Lint and Format
         run: |
+          cd ./client
           npm run format
           npm run prep
       - name: Rollup and serve
         run: |
+          cd ./client
           npm run build
           npm run start
