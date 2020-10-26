@@ -12,3 +12,10 @@ For Unix-based systems:
 2. `npm i && npm t` in root folder --> see tests pass
 3. `cd ./client && npm i`
 4. `npm run go`
+
+## Extendibility
+
+Loan types are defined in `./client/public/loan-types.json`. Whatever gets put in there appears in the dropdown menu.
+
+Schemes (essentially payback schemes) are listed in `.client/src/schemes/schemes.js`. That list also appears in the first dropdown of the app. 
+The core functionality/algorithm of each scheme is implemented in `.client/src/schemes/funcs.js`.
