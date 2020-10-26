@@ -18,11 +18,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
          node-version: 12
-      - name: Install root dependencies
+      - name: Install root dependencies and run tests
          run: |
             npm i
-      - name: Run tests
-         run: |
             npm t
       - name: Install dependencies in ./client
          run: |
